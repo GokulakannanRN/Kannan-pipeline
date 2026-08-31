@@ -15,7 +15,7 @@ module "ec2" {
 }
 module "s3" {
   source        = "../../modules/s3"
-  bucket        = var.bucket
+  bucket        = "kannan-project"
   env           = "production"
   s3_count      = 2
 }
