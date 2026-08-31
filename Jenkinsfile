@@ -41,17 +41,7 @@ pipeline {
         input message: "Approvee the deployment to production?", ok: 'Deploy'
       }
     }
-    stage('Terraform Destroy') {
-    steps {
-        input message: 'Destroy production infrastructure?', ok: 'Destroy'
-        dir('environments/production') {
-            sh 'terraform init'
-            sh 'terraform destroy'
-        }
-    }
-}
-
-
+    
     stage('Terraform Apply') {
       steps {
         dir("${TF_WORKDIR}") {
