@@ -15,7 +15,7 @@ module "ec2" {
 }
 module "s3" {
   source        = "../../modules/s3"
-  bucket        = var.aws_s3_bucket
+  bucket        = var.bucket
   env           = "production"
   s3_count      = 2
 }

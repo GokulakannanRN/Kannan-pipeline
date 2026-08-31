@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "mys3" {
-  bucket = "${var.aws_s3_bucket}-${var.env}-${count.index}"
+  bucket = "${var.bucket}-${var.env}-${count.index}"
   count         = var.s3_count
 
     tags = {
